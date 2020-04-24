@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="audio-box">
     <div class="container_box" id="audio_detail">
       <div>
-        <audio autoplay="autoplay" ref="audioPlayer" id="audioPlayer" preload="auto" :src="audio.src">
+<!--        <audio autoplay="autoplay" ref="audioPlayer" id="audioPlayer" preload="auto" :src="audio.src">-->
+        <audio autoplay="autoplay" ref="audioPlayer" id="audioPlayer" preload="auto" src="./src/assets/to%20you%20in%20the%20future.m4a">
           你的浏览器不支持audio标签
         </audio>
         <div class="audioBox">
@@ -25,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div slot="footer" class="dialog-footer">
+    <div class="audio-footer">
       <div class="audio-vol">
         <div class="vol" :class="{ 'vol-mute' : audioVol === 0 }" @click="setVolMute"></div>
         <el-slider v-model="audioVol" @change="setVol" :show-tooltip="false" :step="0.1" :max="1"></el-slider>
@@ -199,132 +200,4 @@
   }
 </script>
 
-<style lang="scss">
-  .call-list .dialog-footer {
-    padding: 0px 20px 0;
-    display: flex;
-  }
-  .call-list .dialog-footer > div {
-    flex: 1;
-  }
-  .call-list .dialog-footer .audio-ctr {
-    display: flex;
-    justify-content: center;
-  }
-  .call-list .dialog-footer .audio-ctr .audio-ctr-button {
-    margin: 0 10px;
-    /*flex: 1;*/
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-  }
-  .call-list .dialog-footer .audio-ctr .play, .call-list .dialog-footer .audio-ctr .pause {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    position: relative;
-    top: -10px;
-    box-shadow: 0px 5px 10px 0px rgba(0, 188, 188, 0.3);
-  }
-  .call-list .dialog-footer .audio-ctr .play {
-    background: url("./img/pause.png") no-repeat;
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-ctr .pause {
-    background: url("./img/play.png") no-repeat;
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-ctr .back {
-    background: url("./img/back.png") no-repeat;
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-ctr .back:hover {
-    background: url("./img/back-hover.png") no-repeat;
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-ctr .forward {
-    background: url("./img/forward.png") no-repeat;
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-ctr .forward:hover {
-    background: url("./img/forward-hover.png") no-repeat;
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-vol {
-    width: 150px;
-    display: flex;
-  }
-  .call-list .dialog-footer .audio-vol .vol {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    background: url("./img/vol.png");
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-vol .vol-mute {
-    background: url("./img/mute.png");
-    background-size: contain;
-  }
-  .call-list .dialog-footer .audio-vol .el-slider {
-    width: 60px;
-    margin-left: 5px;
-    position: relative;
-    top: -7px;
-  }
-  .call-list .dialog-footer .audio-vol .el-slider .el-slider__runway {
-    height: 3px;
-  }
-  .call-list .dialog-footer .audio-vol .el-slider .el-slider__runway .el-slider__bar {
-    height: 3px;
-    background-color: #696D83;
-  }
-  .call-list .dialog-footer .audio-vol .el-slider .el-slider__runway .el-slider__button-wrapper {
-    width: 20px;
-    height: 20px;
-    top: -11px;
-  }
-  .call-list .dialog-footer .audio-vol .el-slider .el-slider__runway .el-slider__button {
-    width: 7px;
-    height: 7px;
-    border-color: #696D7F;
-  }
-  .call-list .dialog-footer .play-speed {
-    text-align: right;
-  }
-  .call-list .container_box {
-    user-select: none;
-  }
-  .call-list .container_box .audioBox_slider:hover .el-slider__button {
-    opacity: 1;
-  }
-  .call-list .container_box .el-slider__button {
-    transition: all 0.3s;
-    opacity: 0;
-  }
-  .call-list .container_box .audioBox {
-    padding: 10px 15px;
-  }
-  .call-list .container_box .audio-time {
-    display: flex;
-  }
-  .call-list .container_box .audio-time .audioBox_left {
-    flex: 1;
-    color: #999;
-    font-size: 12px;
-    width: 14%;
-    text-align: left;
-  }
-  .call-list .container_box .audio-time .audioBox_mid {
-    color: #f00;
-  }
-  .call-list .container_box .audio-time .audioBox_right {
-    flex: 1;
-    text-align: right;
-    color: #999;
-    font-size: 12px;
-    width: 14%;
-  }
-  .call-list .container_box .audioBox_slider {
-    width: 100%;
-  }
-</style>
+<style src="./slider.css"></style>
