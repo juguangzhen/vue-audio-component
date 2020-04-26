@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="audio-box_slider">
-              <el-slider v-model="audioTime" @change="onChange" :show-tooltip="false" :step="1" :max="audioTimeLonger"></el-slider>
+              <v-slider v-model="audioTime" @change="onChange" :show-tooltip="false" :step="1" :max="audioTimeLonger"></v-slider>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
           <img src="../../assets/img/vol.png" alt="">
           <img class="mute" src="../../assets/img/mute.png" alt="">
         </div>
-        <el-slider v-model="audioVol" @change="setVol" :show-tooltip="false" :step="0.1" :max="1"></el-slider>
+        <v-slider v-model="audioVol" @change="setVol" :show-tooltip="false" :step="0.1" :max="1"></v-slider>
       </div>
       <div class="audio-ctr">
         <div class="audio-ctr-button back" @click="gotoSession(-15)">
