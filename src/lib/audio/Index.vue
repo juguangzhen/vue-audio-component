@@ -98,7 +98,7 @@
     },
     methods: {
       initAudio() {
-        if(typeof this.audio.volume !== 'number') {
+        if(typeof this.audio.volume !== 'number' && this.audio.volume !== undefined) {
           throw Error('volume must be a number!')
           return
         }
