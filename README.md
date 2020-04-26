@@ -2,6 +2,37 @@
 
 > A Vue.js project
 
+## INSTALL
+
+``` bash
+# install dependencies
+npm supreme-audio
+```
+## USE
+```
+# in main.js
+
+import vAudio from 'supreme-audio'
+
+Vue.use(vAudio)
+
+
+# in template
+<v-audio :audio="audioData"></v-audio>
+
+# desc
+audio: {
+  src: '', // audio url
+  noSources: '' // tips for no sources
+}
+
+```
+
+# build for production with minification
+npm run build
+```
+
+
 ## Build Setup
 
 ``` bash
@@ -15,4 +46,3 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
