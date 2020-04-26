@@ -3,9 +3,10 @@
  * @Date: 2020/4/24 6:54 下午
  */
 // 导入所有组件
+import vSlider from '../common/slider'
 import vAudio from './audio/Index'
 
-const components = [vAudio]
+const components = [vAudio, vSlider]
 const install = function(vue) {
   if (install.installed) return
   components.map((component) => {
@@ -18,5 +19,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
+  vSlider,
   vAudio
 }

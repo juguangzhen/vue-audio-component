@@ -731,7 +731,7 @@ function _broadcast(componentName, eventName, params) {
 }
 
 /* harmony default export */ var mainvue_type_script_lang_js_ = ({
-  name: 'vSlider',
+  name: 'VSlider',
 
   inject: {
     elForm: {
