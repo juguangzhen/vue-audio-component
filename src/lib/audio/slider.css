@@ -3,11 +3,6 @@
   content: "";
 }
 
-.el-slider__button-wrapper .el-tooltip, .el-slider__button-wrapper::after {
-  vertical-align: middle;
-  display: inline-block;
-}
-
 .el-slider::after {
   clear: both;
 }
