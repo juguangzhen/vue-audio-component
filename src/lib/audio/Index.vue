@@ -2,9 +2,8 @@
   <div class="audio-box">
     <div class="container_box" id="audio_detail">
       <div>
-<!--        <audio autoplay="autoplay" ref="audioPlayer" id="audioPlayer" preload="auto" :src="audio.src">-->
-        <audio autoplay="autoplay" ref="audioPlayer" id="audioPlayer" preload="auto" src="./src/assets/to%20you%20in%20the%20future.m4a">
-          你的浏览器不支持audio标签
+        <audio :autoplay="audio.autoplay" ref="audioPlayer" id="audioPlayer" preload="auto" :src="audio.src">
+        你的浏览器不支持audio标签
         </audio>
         <div class="audioBox">
           <div class="audioBox_top">
@@ -28,13 +27,25 @@
     </div>
     <div class="audio-footer">
       <div class="audio-vol">
-        <div class="vol" :class="{ 'vol-mute' : audioVol === 0 }" @click="setVolMute"></div>
+        <div class="vol" :class="{ 'vol-mute' : audioVol === 0 }" @click="setVolMute">
+          <img src="../../assets/img/vol.png" alt="">
+          <img class="mute" src="../../assets/img/mute.png" alt="">
+        </div>
         <el-slider v-model="audioVol" @change="setVol" :show-tooltip="false" :step="0.1" :max="1"></el-slider>
       </div>
       <div class="audio-ctr">
-        <div class="audio-ctr-button back" @click="gotoSession(-15)"></div>
-        <div class="audio-ctr-button big-icon" :class="isPlay ? 'pause' : 'play'" @click="ctrlAudio"></div>
-        <div class="audio-ctr-button forward" @click="gotoSession(15)"></div>
+        <div class="audio-ctr-button back" @click="gotoSession(-15)">
+          <img class="hide" src="../../assets/img/back.png" alt="">
+          <img class="hover" src="../../assets/img/back-hover.png" alt="">
+        </div>
+        <div class="audio-ctr-button big-icon" :class="isPlay ? 'pause' : 'play'" @click="ctrlAudio">
+          <img v-show="isPlay" src="../../assets/img/play.png" alt="">
+          <img v-show="!isPlay" src="../../assets/img/pause.png" alt="">
+        </div>
+        <div class="audio-ctr-button forward" @click="gotoSession(15)">
+          <img class="hide" src="../../assets/img/forward.png" alt="">
+          <img class="hover" src="../../assets/img/forward-hover.png" alt="">
+        </div>
       </div>
       <div class="play-speed" @click="changeMultiple">
         <span>{{ multipleArray[multipleIndex] }}X</span>
@@ -55,9 +66,7 @@
     props: {
       audio: {
         type: Object,
-        default() {
-          return {}
-        }
+        required: true
       }
     },
     data() {
@@ -66,17 +75,17 @@
           noSources: '没有可播放的资源',
         },
         audioDetail: {}, // 音频详情
-        audioTime:0, // 音频进度百分比
+        audioTime: 0, // 音频进度百分比
         audioVol: 0.5, // 音频音量百分比
         isMute: false, // 是否静音
         backupVol: 0.5, // 保存静音前的音量
         audioTimeLonger: 0,
-        audioCurrentTime:'00:00', // 音频当前播放时间
-        audioAllTime:'00:00', // 音频总播放时间
-        audioAllDuration:0, // 音频总播放秒数
-        isPlay:false, // 是否正在播放
-        multipleArray:[0.75,1,1.5,2],
-        multipleIndex:1,
+        audioCurrentTime: '00:00', // 音频当前播放时间
+        audioAllTime: '00:00', // 音频总播放时间
+        audioAllDuration: 0, // 音频总播放秒数
+        isPlay: false, // 是否正在播放
+        multipleArray: [0.75, 1, 1.5, 2],
+        multipleIndex: 1,
         audioInterval: null,
         audioPlayer: null
       }
@@ -88,9 +97,6 @@
       clearInterval(this.audioInterval)
     },
     methods: {
-      close() {
-        this.$emit('closeAudio')
-      },
       ctrlAudio() {
         if(!this.audioPlayer.duration) {
           return
@@ -102,8 +108,8 @@
         }
       },
       realFormatSecond(second) {
-        // let secondType = typeof second
-        if (second) {
+        // 边界值，当数值小于15秒并且是后退15秒的时候 second为负值
+        if (second && second >= 0) {
           this.audioTimeLonger = 100
           second = parseInt(second)
           let minute = Math.floor(second / 60)
@@ -113,7 +119,7 @@
           return '00:00'
         }
       },
-      //设置定时检测
+      // 设置定时检测
       setAudioInterval(){
         this.audioInterval = setInterval(()=>{
           this.getAudioTime()
@@ -149,7 +155,8 @@
         this.audioVol = val
         this.audioPlayer.volume = this.audioVol
       },
-      //播放
+
+      // 播放
       playAudio(){
         //重设定时器
         clearInterval(this.audioInterval)
@@ -159,26 +166,25 @@
         this.audioPlayer.play()
         this.isPlay = true
       },
-      //暂停
+      // 暂停
       pauseAudio(){
         this.audioPlayer.pause()
         this.isPlay = false
       },
-      //获取播放时间
+      // 获取播放时间
       getAudioTime(){
         if(!this.audioPlayer) {
           this.audioPlayer = document.getElementById('audioPlayer')
         }
-        //展示用
+        // 播放时间相关
         this.audioAllTime = this.realFormatSecond(this.audioPlayer.duration - this.audioPlayer.currentTime)
         this.audioAllDuration = this.audioPlayer.duration
         this.audioCurrentTime = this.realFormatSecond(this.audioPlayer.currentTime)
-        //计算当前进度百分比
+        // 计算当前进度百分比
         this.audioTime = Number((this.audioPlayer.currentTime*100/this.audioPlayer.duration).toFixed(3))
       },
-      //滑动进度条
+      // 滑动进度条
       onChange(value){
-        // 设置播放时间
         if(isNaN(value)) return
         this.audioCurrentTime =  this.realFormatSecond(this.audioAllDuration * value / 100)
         this.audioPlayer.currentTime = parseInt(this.audioAllDuration * value / 100)
@@ -187,17 +193,24 @@
         this.audioPlayer.currentTime += number
         this.getAudioTime()
       },
-      //设置倍速播放
+      // 设置倍速播放
       changeMultiple(){
         if(this.multipleIndex < 3) {
-          this.multipleIndex++
+          this.multipleIndex ++
         } else {
-          this.multipleIndex=0
+          this.multipleIndex = 0
         }
         this.audioPlayer.playbackRate = this.multipleArray[this.multipleIndex]
       },
     }
   }
 </script>
-
-<style src="./slider.css"></style>
+<style>
+  @import "slider.css";
+  .audioBox_slider .el-slider__button{
+    border: none;
+    background: #00bebe;
+    width: 14px;
+    height: 14px;
+  }
+</style>
