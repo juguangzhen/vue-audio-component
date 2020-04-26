@@ -1,12 +1,12 @@
-# vue-component
+# vue-audio-component
 
-> A Vue.js project
+> A Audio Component for Vue.js
 
 ## INSTALL
 
 ``` bash
 # install dependencies
-npm supreme-audio
+npm install supreme-audio
 ```
 ## USE
 ```
@@ -33,7 +33,7 @@ npm run build
 ```
 
 
-## Build Setup
+# Build Setup
 
 ``` bash
 # install dependencies
