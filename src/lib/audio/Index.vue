@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="audio-box_slider">
-              <v-slider v-model="audioTime" @change="onChange" :show-tooltip="false" :step="1" :max="audioTimeLonger"></v-slider>
+              <v-slider v-model="audioTime" @change="onChange" :step="1" :max="audioTimeLonger"></v-slider>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
           <img src="../../assets/img/vol.png" alt="">
           <img class="mute" src="../../assets/img/mute.png" alt="">
         </div>
-        <v-slider v-model="audioVol" @change="setVol" :show-tooltip="false" :step="0.1" :max="1"></v-slider>
+        <v-slider v-model="audioVol" @change="setVol" :step="0.1" :max="1"></v-slider>
       </div>
       <div class="audio-ctr">
         <div class="audio-ctr-button back" @click="gotoSession(-15)">
@@ -76,9 +76,9 @@
         },
         audioDetail: {}, // 音频详情
         audioTime: 0, // 音频进度百分比
-        audioVol: 0.5, // 音频音量百分比
+        audioVol: 0.8, // 音频音量百分比
         isMute: false, // 是否静音
-        backupVol: 0.5, // 保存静音前的音量
+        backupVol: 0.8, // 保存静音前的音量
         audioTimeLonger: 0,
         audioCurrentTime: '00:00', // 音频当前播放时间
         audioAllTime: '00:00', // 音频总播放时间
@@ -91,12 +91,25 @@
       }
     },
     mounted() {
-      this.setAudioInterval()
+      this.initAudio()
     },
     beforeDestroy() {
       clearInterval(this.audioInterval)
     },
     methods: {
+      initAudio() {
+        if(typeof this.audio.volume !== 'number') {
+          throw Error('volume must be a number!')
+          return
+        }
+        if(this.audio.volume) {
+          this.audioVol = this.audio.volume > 1 ? 1 : this.audio.volume
+        } else if(this.audio.volume === 0) {
+          this.isMute = true
+          this.audioVol = this.audio.volume
+        }
+        this.setAudioInterval()
+      },
       ctrlAudio() {
         if(!this.audioPlayer.duration) {
           return

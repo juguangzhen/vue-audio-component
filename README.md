@@ -22,8 +22,9 @@ Vue.use(vAudio)
 
 # desc
 audio: {
-  src: '', // audio url
-  noSources: '' // tips for no sources
+  src: '', // string, audio url
+  volume: '', // number, 0 <= 1
+  noSources: '' // string tips for no sources
 }
 
 ```

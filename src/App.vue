@@ -10,7 +10,9 @@ export default {
   data () {
     return {
       musicDetail: {
-        src: './src/music/Pascal%20Letoublon%20-%20Friendships.mp3'
+        volume: 1,
+        src: './src/music/Pascal%20Letoublon%20-%20Friendships.mp3',
+        noSources: 'no '
       }
     }
   },
