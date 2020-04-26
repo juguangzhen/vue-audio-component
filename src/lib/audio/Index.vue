@@ -5,20 +5,20 @@
         <audio :autoplay="audio.autoplay" ref="audioPlayer" id="audioPlayer" preload="auto" :src="audio.src">
         你的浏览器不支持audio标签
         </audio>
-        <div class="audioBox">
-          <div class="audioBox_top">
+        <div class="audio-box">
+          <div class="audio-box_top">
             <div class="audio-time">
-              <div class="audioBox_left">
+              <div class="audio-box_left">
                 {{ audioCurrentTime }}
               </div>
-              <div class="audioBox_mid" v-if="audioPlayer && !audioPlayer.duration">
+              <div class="audio-box_mid" v-if="audioPlayer && !audioPlayer.duration">
                 {{  audio.noSources || defaultAudio.noSources }}
               </div>
-              <div class="audioBox_right">
+              <div class="audio-box_right">
                 {{ audioAllTime }}
               </div>
             </div>
-            <div class="audioBox_slider">
+            <div class="audio-box_slider">
               <el-slider v-model="audioTime" @change="onChange" :show-tooltip="false" :step="1" :max="audioTimeLonger"></el-slider>
             </div>
           </div>
@@ -207,7 +207,7 @@
 </script>
 <style>
   @import "slider.css";
-  .audioBox_slider .el-slider__button{
+  .audio-box_slider .v-slider__button{
     border: none;
     background: #00bebe;
     width: 14px;

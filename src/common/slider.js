@@ -203,10 +203,10 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "el-slider",
+      staticClass: "v-slider",
       class: {
         "is-vertical": _vm.vertical,
-        "el-slider--with-input": _vm.showInput
+        "v-slider--with-input": _vm.showInput
       },
       attrs: {
         role: "slider",
@@ -221,13 +221,13 @@ var render = function() {
         "div",
         {
           ref: "slider",
-          staticClass: "el-slider__runway",
+          staticClass: "v-slider__runway",
           class: { "show-input": _vm.showInput, disabled: _vm.sliderDisabled },
           style: _vm.runwayStyle,
           on: { click: _vm.onSliderClick }
         },
         [
-          _c("div", { staticClass: "el-slider__bar", style: _vm.barStyle }),
+          _c("div", { staticClass: "v-slider__bar", style: _vm.barStyle }),
           _c("slider-button", {
             ref: "button1",
             attrs: {
@@ -262,7 +262,7 @@ var render = function() {
             return _vm.showStops
               ? _c("div", {
                   key: key,
-                  staticClass: "el-slider__stop",
+                  staticClass: "v-slider__stop",
                   style: _vm.getStopStyle(item)
                 })
               : _vm._e()
@@ -274,7 +274,7 @@ var render = function() {
                   _vm._l(_vm.markList, function(item, key) {
                     return _c("div", {
                       key: key,
-                      staticClass: "el-slider__stop el-slider__marks-stop",
+                      staticClass: "v-slider__stop v-slider__marks-stop",
                       style: _vm.getStopStyle(item.position)
                     })
                   }),
@@ -282,7 +282,7 @@ var render = function() {
                 ),
                 _c(
                   "div",
-                  { staticClass: "el-slider__marks" },
+                  { staticClass: "v-slider__marks" },
                   _vm._l(_vm.markList, function(item, key) {
                     return _c("slider-marker", {
                       key: key,
@@ -315,7 +315,7 @@ var buttonvue_type_template_id_e72d2ad2_render = function() {
     "div",
     {
       ref: "button",
-      staticClass: "el-slider__button-wrapper",
+      staticClass: "v-slider__button-wrapper",
       class: { hover: _vm.hovering, dragging: _vm.dragging },
       style: _vm.wrapperStyle,
       attrs: { tabindex: "0" },
@@ -385,7 +385,7 @@ var buttonvue_type_template_id_e72d2ad2_render = function() {
     },
     [
       _c("div", {
-        staticClass: "el-slider__button",
+        staticClass: "v-slider__button",
         class: { hover: _vm.hovering, dragging: _vm.dragging }
       })
     ]
