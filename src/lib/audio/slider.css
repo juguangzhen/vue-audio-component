@@ -61,18 +61,6 @@
   width: 130px;
 }
 
-.el-slider__input.el-input-number--mini {
-  margin-top: 5px;
-}
-
-.el-slider__input.el-input-number--medium {
-  margin-top: 0;
-}
-
-.el-slider__input.el-input-number--large {
-  margin-top: -2px;
-}
-
 .el-slider__bar {
   height: 6px;
   background-color: #B8E8EB;
@@ -82,10 +70,10 @@
 }
 
 .el-slider__button-wrapper {
-  height: 36px;
-  width: 36px;
+  height: 14px;
+  width: 14px;
   z-index: 1001;
-  top: -15px;
+  top: -5px;
   transform: translateX(-50%);
   background-color: transparent;
   text-align: center;
@@ -188,59 +176,6 @@
   transform: translateY(50%);
 }
 
-.el-slider.is-vertical.el-slider--with-input {
-  padding-bottom: 58px;
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input {
-  overflow: visible;
-  float: none;
-  position: absolute;
-  bottom: 22px;
-  width: 36px;
-  margin-top: 15px;
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input__inner {
-  text-align: center;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__decrease, .el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__increase {
-  top: 32px;
-  margin-top: -1px;
-  border: 1px solid #DCDFE6;
-  line-height: 20px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__decrease {
-  width: 18px;
-  right: 18px;
-  border-bottom-left-radius: 4px;
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__increase {
-  width: 19px;
-  border-bottom-right-radius: 4px;
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input .el-input-number__increase ~ .el-input .el-input__inner {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input:hover .el-input-number__decrease, .el-slider.is-vertical.el-slider--with-input .el-slider__input:hover .el-input-number__increase {
-  border-color: #C0C4CC;
-}
-
-.el-slider.is-vertical.el-slider--with-input .el-slider__input:active .el-input-number__decrease, .el-slider.is-vertical.el-slider--with-input .el-slider__input:active .el-input-number__increase {
-  border-color: #00bebe;
-}
 
 .el-slider.is-vertical .el-slider__marks-text {
   margin-top: 0;
@@ -291,28 +226,32 @@
   /*background: url("../../assets/img/pause.png") no-repeat;*/
   /*background-size: contain;*/
 }
+/*
 .audio-box .audio-ctr .pause {
-  /*background: url("../../assets/img/play.png") no-repeat;*/
-  /*background-size: contain;*/
+  background: url("../../assets/img/play.png") no-repeat;
+  background-size: contain;
 }
+*/
 .audio-box .audio-ctr .back img, .audio-box .audio-ctr .forward img{
   width: 100%;
   height: 100%;
   /*background: url("../../assets/img/back.png") no-repeat;*/
   /*background-size: contain;*/
 }
+/*
 .audio-box .audio-ctr .back:hover {
-  /*background: url("../../assets/img/back-hover.png") no-repeat;*/
-  /*background-size: contain;*/
+  background: url("../../assets/img/back-hover.png") no-repeat;
+  background-size: contain;
 }
 .audio-box .audio-ctr .forward img{
-  /*background: url("../../assets/img/forward.png") no-repeat;*/
-  /*background-size: contain;*/
+  background: url("../../assets/img/forward.png") no-repeat;
+  background-size: contain;
 }
 .audio-box .audio-ctr .forward:hover {
-  /*background: url("../../assets/img/forward-hover.png") no-repeat;*/
-  /*background-size: contain;*/
+  background: url("../../assets/img/forward-hover.png") no-repeat;
+  background-size: contain;
 }
+*/
 .audio-box .audio-vol {
   width: 150px;
   display: flex;
@@ -353,9 +292,8 @@
   background-color: #696D83;
 }
 .audio-box .audio-vol .el-slider .el-slider__runway .el-slider__button-wrapper {
-  width: 20px;
-  height: 20px;
-  top: -11px;
+  width: 12px;
+  height: 12px;
 }
 .audio-box .audio-vol .el-slider .el-slider__runway .el-slider__button {
   width: 7px;

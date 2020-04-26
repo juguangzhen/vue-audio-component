@@ -1,7 +1,7 @@
 {
   "name": "supreme-audio",
   "description": "A Audio Component for Vue.js",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "author": "guangzhen_ju <guangzhen.ju@163.com>",
   "license": "MIT",
   "private": false,
@@ -32,7 +32,6 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
-    "element-ui": "^2.13.1",
     "file-loader": "^1.1.4",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",

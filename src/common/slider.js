@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 62);
+/******/ 	return __webpack_require__(__webpack_require__.s = 60);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -189,34 +189,13 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 29:
-/***/ (function(module, exports) {
-
-module.exports = require("element-ui/lib/tooltip");
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports) {
-
-module.exports = require("element-ui/lib/mixins/emitter");
-
-/***/ }),
-
-/***/ 49:
-/***/ (function(module, exports) {
-
-module.exports = require("element-ui/lib/input-number");
-
-/***/ }),
-
-/***/ 62:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./packages/slider/src/main.vue?vue&type=template&id=32708644&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.7.1@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_vue-loader@15.7.1@vue-loader/lib??vue-loader-options!./packages/slider/src/main.vue?vue&type=template&id=32708644&
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -238,29 +217,6 @@ var render = function() {
       }
     },
     [
-      _vm.showInput && !_vm.range
-        ? _c("el-input-number", {
-            ref: "input",
-            staticClass: "el-slider__input",
-            attrs: {
-              step: _vm.step,
-              disabled: _vm.sliderDisabled,
-              controls: _vm.showInputControls,
-              min: _vm.min,
-              max: _vm.max,
-              debounce: _vm.debounce,
-              size: _vm.inputSize
-            },
-            on: { change: _vm.emitChange },
-            model: {
-              value: _vm.firstValue,
-              callback: function($$v) {
-                _vm.firstValue = $$v
-              },
-              expression: "firstValue"
-            }
-          })
-        : _vm._e(),
       _c(
         "div",
         {
@@ -341,8 +297,7 @@ var render = function() {
         ],
         2
       )
-    ],
-    1
+    ]
   )
 }
 var staticRenderFns = []
@@ -351,11 +306,7 @@ render._withStripped = true
 
 // CONCATENATED MODULE: ./packages/slider/src/main.vue?vue&type=template&id=32708644&
 
-// EXTERNAL MODULE: external "element-ui/lib/input-number"
-var input_number_ = __webpack_require__(49);
-var input_number_default = /*#__PURE__*/__webpack_require__.n(input_number_);
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./packages/slider/src/button.vue?vue&type=template&id=e72d2ad2&
+// CONCATENATED MODULE: ./node_modules/_vue-loader@15.7.1@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_vue-loader@15.7.1@vue-loader/lib??vue-loader-options!./packages/slider/src/button.vue?vue&type=template&id=e72d2ad2&
 var buttonvue_type_template_id_e72d2ad2_render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -433,28 +384,11 @@ var buttonvue_type_template_id_e72d2ad2_render = function() {
       }
     },
     [
-      _c(
-        "el-tooltip",
-        {
-          ref: "tooltip",
-          attrs: {
-            placement: "top",
-            "popper-class": _vm.tooltipClass,
-            disabled: !_vm.showTooltip
-          }
-        },
-        [
-          _c("span", { attrs: { slot: "content" }, slot: "content" }, [
-            _vm._v(_vm._s(_vm.formatValue))
-          ]),
-          _c("div", {
-            staticClass: "el-slider__button",
-            class: { hover: _vm.hovering, dragging: _vm.dragging }
-          })
-        ]
-      )
-    ],
-    1
+      _c("div", {
+        staticClass: "el-slider__button",
+        class: { hover: _vm.hovering, dragging: _vm.dragging }
+      })
+    ]
   )
 }
 var buttonvue_type_template_id_e72d2ad2_staticRenderFns = []
@@ -463,11 +397,7 @@ buttonvue_type_template_id_e72d2ad2_render._withStripped = true
 
 // CONCATENATED MODULE: ./packages/slider/src/button.vue?vue&type=template&id=e72d2ad2&
 
-// EXTERNAL MODULE: external "element-ui/lib/tooltip"
-var tooltip_ = __webpack_require__(29);
-var tooltip_default = /*#__PURE__*/__webpack_require__.n(tooltip_);
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./packages/slider/src/button.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/_babel-loader@7.1.5@babel-loader/lib!./node_modules/_vue-loader@15.7.1@vue-loader/lib??vue-loader-options!./packages/slider/src/button.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -490,23 +420,9 @@ var tooltip_default = /*#__PURE__*/__webpack_require__.n(tooltip_);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-
-
 
 /* harmony default export */ var buttonvue_type_script_lang_js_ = ({
   name: 'ElSliderButton',
-
-  components: {
-    ElTooltip: tooltip_default.a
-  },
-
   props: {
     value: {
       type: Number,
@@ -515,8 +431,7 @@ var tooltip_default = /*#__PURE__*/__webpack_require__.n(tooltip_);
     vertical: {
       type: Boolean,
       default: false
-    },
-    tooltipClass: String
+    }
   },
 
   data: function data() {
@@ -548,9 +463,6 @@ var tooltip_default = /*#__PURE__*/__webpack_require__.n(tooltip_);
     step: function step() {
       return this.$parent.step;
     },
-    showTooltip: function showTooltip() {
-      return this.$parent.showTooltip;
-    },
     precision: function precision() {
       return this.$parent.precision;
     },
@@ -559,9 +471,6 @@ var tooltip_default = /*#__PURE__*/__webpack_require__.n(tooltip_);
     },
     enableFormat: function enableFormat() {
       return this.$parent.formatTooltip instanceof Function;
-    },
-    formatValue: function formatValue() {
-      return this.enableFormat && this.$parent.formatTooltip(this.value) || this.value;
     },
     wrapperStyle: function wrapperStyle() {
       return this.vertical ? { bottom: this.currentPosition } : { left: this.currentPosition };
@@ -696,7 +605,7 @@ var tooltip_default = /*#__PURE__*/__webpack_require__.n(tooltip_);
 });
 // CONCATENATED MODULE: ./packages/slider/src/button.vue?vue&type=script&lang=js&
  /* harmony default export */ var src_buttonvue_type_script_lang_js_ = (buttonvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/_vue-loader@15.7.1@vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(0);
 
 // CONCATENATED MODULE: ./packages/slider/src/button.vue
@@ -743,25 +652,7 @@ component.options.__file = "packages/slider/src/button.vue"
     );
   }
 });
-// EXTERNAL MODULE: external "element-ui/lib/mixins/emitter"
-var emitter_ = __webpack_require__(4);
-var emitter_default = /*#__PURE__*/__webpack_require__.n(emitter_);
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./packages/slider/src/main.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// CONCATENATED MODULE: ./node_modules/_babel-loader@7.1.5@babel-loader/lib!./node_modules/_vue-loader@15.7.1@vue-loader/lib??vue-loader-options!./packages/slider/src/main.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -827,12 +718,20 @@ var emitter_default = /*#__PURE__*/__webpack_require__.n(emitter_);
 
 
 
+function _broadcast(componentName, eventName, params) {
+  this.$children.forEach(function (child) {
+    var name = child.$options.componentName;
 
+    if (name === componentName) {
+      child.$emit.apply(child, [eventName].concat(params));
+    } else {
+      _broadcast.apply(child, [componentName, eventName].concat([params]));
+    }
+  });
+}
 
 /* harmony default export */ var mainvue_type_script_lang_js_ = ({
   name: 'ElSlider',
-
-  mixins: [emitter_default.a],
 
   inject: {
     elForm: {
@@ -905,7 +804,6 @@ var emitter_default = /*#__PURE__*/__webpack_require__.n(emitter_);
   },
 
   components: {
-    ElInputNumber: input_number_default.a,
     SliderButton: src_button,
     SliderMarker: marker
   },
@@ -956,6 +854,24 @@ var emitter_default = /*#__PURE__*/__webpack_require__.n(emitter_);
   },
 
   methods: {
+    dispatch: function dispatch(componentName, eventName, params) {
+      var parent = this.$parent || this.$root;
+      var name = parent.$options.componentName;
+
+      while (parent && (!name || name !== componentName)) {
+        parent = parent.$parent;
+
+        if (parent) {
+          name = parent.$options.componentName;
+        }
+      }
+      if (parent) {
+        parent.$emit.apply(parent, [eventName].concat(params));
+      }
+    },
+    broadcast: function broadcast(componentName, eventName, params) {
+      _broadcast.call(this, componentName, eventName, params);
+    },
     valueChanged: function valueChanged() {
       var _this = this;
 
